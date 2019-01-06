@@ -1,0 +1,12 @@
+kumuluzee:
+  name: dashboard-service
+  env:
+    name: dev
+  version: 1.0.0
+
+  datasources:
+    - jndi-name: jdbc/BooksDS
+      connection-url: jdbc:postgresql://postgres:5432/postgres
+      username: dbuser
+      password: postgres
+      max-pool-size: 20

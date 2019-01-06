@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dashboard-deployment
+  labels:
+    app: dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dashboard
+  template:
+    metadata:
+      labels:
+        app: dashboard
+    spec:
+      containers:
+        - name: dashboard
+          image: markoambrozic/dashboard:1.0.2
+          ports:
+            - containerPort: 8080
+          env:
+            - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
+              value: jdbc:postgresql://postgres:5432/postgres
+            - name: KUMULUZEE_DATASOURCES0_USERNAME
+              value: dbuser
+            - name: KUMULUZEE_DATASOURCES0_PASSWORD
+              value: postgres
