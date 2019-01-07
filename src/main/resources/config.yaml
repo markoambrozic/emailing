@@ -1,5 +1,5 @@
 kumuluzee:
-  name: dashboard-service
+  name: emailing-service
   env:
     name: dev
   version: 1.0.0

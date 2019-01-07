@@ -34,6 +34,8 @@ public class EmailingResource {
 
     private static final Logger LOG = LogManager.getLogger(EmailingResource.class.getName());
 
+
+
     @GET
     public Response sendEmail() {
         JSONObject obj = new JSONObject();
@@ -89,4 +91,14 @@ public class EmailingResource {
 
         return Response.ok(obj.toString()).build();
     }
+
+    @POST
+    @Path("/sendEmail")
+    public Response sendEmail(String emailJSON) {
+        //TODO actual sending of email
+        LOG.trace("New mail sent!");
+
+        return Response.status(Response.Status.OK).entity(emailJSON).build();
+    }
+
 }
