@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dashboard-deployment
+  name: emailing-deployment
   labels:
-    app: dashboard
+    app: emailing
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dashboard
+      app: emailing
   template:
     metadata:
       labels:
-        app: dashboard
+        app: emailing
     spec:
       containers:
-        - name: dashboard
-          image: markoambrozic/dashboard:1.0.2
+        - name: emailing
+          image: markoambrozic/emailing:1.0.0
           ports:
             - containerPort: 8080
           env:
