@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: emailing
-          image: markoambrozic/emailing:1.0.2
+          image: markoambrozic/emailing:1.0.3
           ports:
             - containerPort: 8080
           env:
